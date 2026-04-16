@@ -1,3 +1,4 @@
+
 import { FileSpreadsheet, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -23,25 +24,75 @@ const whoIsItFor = [
   "Companies and LLPs",
 ];
 
+function ItrIllustration() {
+  return (
+    <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="ITR Services Illustration">
+      <rect width="480" height="320" rx="16" fill="#F3F4F6" />
+      
+      {/* Main document representing ITR form */}
+      <rect x="120" y="60" width="240" height="200" rx="12" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      <rect x="135" y="75" width="80" height="12" rx="4" fill="#1D4ED8" />
+      <text x="225" y="86" fontSize="10" fill="#6B7280">Income Tax Return</text>
+
+      {/* Abstract lines for form content */}
+      {[100, 115, 130, 145, 160].map(y => (
+        <rect key={y} x="140" y={y} width="200" height="6" rx="3" fill="#E5E7EB" />
+      ))}
+      <rect x="140" y="160" width="120" height="6" rx="3" fill="#E5E7EB" />
+
+      {/* Financial icons */}
+      {/* Rupee symbol for income */}
+      <circle cx="80" cy="120" r="30" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      <text x="80" y="128" textAnchor="middle" fontSize="24" fontWeight="bold" fill="#16A34A">₹</text>
+      <text x="80" y="100" textAnchor="middle" fontSize="10" fill="#16A34A">INCOME</text>
+
+      {/* Shield for tax savings/deductions */}
+      <path d="M400 100 L 400 140 C 400 155, 380 165, 360 165 C 340 165, 320 155, 320 140 L 320 100 L 360 80 Z" fill="#3B82F6"/>
+      <text x="360" y="125" textAnchor="middle" fontSize="18" fill="#FFFFFF" fontWeight="bold">80C</text>
+      <text x="360" y="145" textAnchor="middle" fontSize="10" fill="#FFFFFF">DEDUCTIONS</text>
+
+      {/* Official stamp/seal */}
+      <circle cx="240" cy="220" r="35" fill="#1D4ED8" />
+      <path d="M225 220 l 10 12 l 20 -20" stroke="#FFFFFF" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      <text x="240" y="260" textAnchor="middle" fontSize="9" fill="#FFFFFF" fontWeight="bold">VERIFIED</text>
+
+      {/* Smaller floating elements */}
+      <rect x="60" y="230" width="50" height="30" rx="4" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+      <text x="85" y="248" textAnchor="middle" fontSize="8">PAN</text>
+
+      <rect x="370" y="200" width="50" height="30" rx="4" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+      <text x="395" y="218" textAnchor="middle" fontSize="8">26AS</text>
+
+    </svg>
+  );
+}
+
 export default function ITRServices() {
   return (
     <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-primary-50 to-white py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="p-3 bg-primary-600 rounded-xl text-white">
-              <FileSpreadsheet className="w-8 h-8" />
-            </div>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <p className="text-sm font-medium text-primary-600 uppercase tracking-wide">Our Services</p>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">ITR Services</h1>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-primary-600 rounded-xl text-white">
+                  <FileSpreadsheet className="w-8 h-8" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-primary-600 uppercase tracking-wide">Our Services</p>
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900">ITR Services</h1>
+                </div>
+              </div>
+              <p className="text-xl text-gray-600 max-w-3xl mt-4">
+                Filing your income tax return on time and accurately is not just a legal requirement — it
+                unlocks loans, visas, and government tenders. Byalance handles everything from document
+                collection to notice responses, ensuring zero-stress compliance.
+              </p>
+            </div>
+            <div className="hidden md:block">
+              <ItrIllustration />
             </div>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mt-4">
-            Filing your income tax return on time and accurately is not just a legal requirement — it
-            unlocks loans, visas, and government tenders. Byalance handles everything from document
-            collection to notice responses, ensuring zero-stress compliance.
-          </p>
         </div>
       </section>
 

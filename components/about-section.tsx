@@ -1,70 +1,5 @@
 import { Handshake, TrendingUp, Clock } from "lucide-react";
-
-// Inline SVG illustration replacing the missing /file_000.webp
-function AccountingIllustration() {
-  return (
-    <svg
-      viewBox="0 0 480 360"
-      xmlns="http://www.w3.org/2000/svg"
-      className="rounded-xl shadow-lg w-full h-auto"
-      aria-label="Professional accounting and financial services"
-    >
-      <rect width="480" height="360" rx="16" fill="#EFF6FF" />
-
-      {/* Desk */}
-      <rect x="40" y="260" width="400" height="16" rx="4" fill="#BFDBFE" />
-
-      {/* Monitor */}
-      <rect x="140" y="120" width="200" height="130" rx="8" fill="#1E40AF" />
-      <rect x="150" y="130" width="180" height="110" rx="4" fill="#EFF6FF" />
-      {/* Chart bars on screen */}
-      <rect x="165" y="195" width="22" height="30" rx="3" fill="#3B82F6" />
-      <rect x="195" y="178" width="22" height="47" rx="3" fill="#2563EB" />
-      <rect x="225" y="163" width="22" height="62" rx="3" fill="#1D4ED8" />
-      <rect x="255" y="150" width="22" height="75" rx="3" fill="#1E40AF" />
-      <rect x="285" y="170" width="22" height="55" rx="3" fill="#3B82F6" />
-      {/* Screen label */}
-      <text x="240" y="148" textAnchor="middle" fontSize="10" fill="#1E40AF" fontFamily="system-ui">Financial Reports</text>
-      {/* Monitor stand */}
-      <rect x="220" y="250" width="40" height="10" rx="2" fill="#93C5FD" />
-      <rect x="205" y="258" width="70" height="6" rx="3" fill="#BFDBFE" />
-
-      {/* Calculator */}
-      <rect x="60" y="190" width="70" height="70" rx="8" fill="#1E40AF" />
-      <rect x="68" y="198" width="54" height="20" rx="4" fill="#EFF6FF" />
-      <text x="95" y="212" textAnchor="middle" fontSize="11" fill="#1E40AF" fontFamily="system-ui" fontWeight="bold">₹ 24,500</text>
-      {[0,1,2,3].map(r => [0,1,2].map(c => (
-        <rect key={`${r}${c}`} x={72 + c*18} y={225 + r*12} width="12" height="9" rx="2" fill="#3B82F6" />
-      )))}
-
-      {/* Document stack */}
-      <rect x="355" y="175" width="70" height="90" rx="6" fill="white" stroke="#BFDBFE" strokeWidth="2" />
-      <rect x="360" y="165" width="70" height="90" rx="6" fill="white" stroke="#BFDBFE" strokeWidth="2" />
-      <rect x="365" y="155" width="70" height="90" rx="6" fill="white" stroke="#93C5FD" strokeWidth="2" />
-      {/* Lines on top doc */}
-      <rect x="375" y="170" width="48" height="4" rx="2" fill="#BFDBFE" />
-      <rect x="375" y="180" width="36" height="4" rx="2" fill="#BFDBFE" />
-      <rect x="375" y="190" width="42" height="4" rx="2" fill="#BFDBFE" />
-      <rect x="375" y="200" width="30" height="4" rx="2" fill="#BFDBFE" />
-      <text x="400" y="230" textAnchor="middle" fontSize="9" fill="#1E40AF" fontFamily="system-ui" fontWeight="bold">ITR / GST</text>
-
-      {/* Coins */}
-      {[0,1,2,3].map(i => (
-        <ellipse key={i} cx="100" cy={260 - i * 7} rx="22" ry="7" fill={i % 2 === 0 ? "#FCD34D" : "#F59E0B"} />
-      ))}
-
-      {/* Checkmark badge */}
-      <circle cx="380" cy="100" r="28" fill="#22C55E" />
-      <path d="M368 100 l8 9 l16-18" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-
-      {/* Labels */}
-      <rect x="120" y="300" width="240" height="28" rx="6" fill="#1E40AF" />
-      <text x="240" y="319" textAnchor="middle" fontSize="13" fill="white" fontFamily="system-ui" fontWeight="bold">
-        Byalance — Trusted Accounting Partner
-      </text>
-    </svg>
-  );
-}
+import Image from 'next/image';
 
 export default function AboutSection() {
   return (
@@ -92,7 +27,13 @@ export default function AboutSection() {
           </div>
 
           <div className="lg:pl-8">
-            <AccountingIllustration />
+            <Image 
+              src="/file_000.webp"
+              alt="Illustration of accounting services provided by Byalance"
+              width={480}
+              height={360}
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
           </div>
         </div>
 

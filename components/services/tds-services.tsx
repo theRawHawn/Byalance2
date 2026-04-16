@@ -1,3 +1,4 @@
+
 import { Receipt, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -22,26 +23,90 @@ const whoIsItFor = [
   "Any entity making payments subject to TDS provisions",
 ];
 
+function TdsIllustration() {
+  return (
+    <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="TDS Services Illustration">
+      <rect width="480" height="320" rx="16" fill="#F3F4F6" />
+
+      {/* Central concept: Payment flow with deduction */}
+      <rect x="80" y="120" width="320" height="80" rx="10" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      
+      {/* Payment Source */}
+      <circle cx="130" cy="160" r="25" fill="#3B82F6" />
+      <text x="130" y="165" textAnchor="middle" fontSize="20" fill="#FFFFFF" fontWeight="bold">₹</text>
+      <text x="130" y="195" textAnchor="middle" fontSize="10">PAYMENT</text>
+
+      {/* Arrow showing flow */}
+      <path d="M170 160 h 140" stroke="#9CA3AF" strokeWidth="4" strokeDasharray="8 4" />
+      
+      {/* Deduction point (scissors) */}
+      <g transform="translate(230, 150) scale(0.6)">
+        <circle cx="15" cy="10" r="8" stroke="#EF4444" strokeWidth="3" fill="none"/>
+        <circle cx="15" cy="30" r="8" stroke="#EF4444" strokeWidth="3" fill="none"/>
+        <line x1="15" y1="10" x2="45" y2="40" stroke="#EF4444" strokeWidth="3"/>
+        <line x1="15" y1="30" x2="45" y2="0" stroke="#EF4444" strokeWidth="3"/>
+      </g>
+      <text x="245" y="195" textAnchor="middle" fontSize="10" fill="#EF4444">TDS</text>
+
+      {/* Final Amount */}
+      <circle cx="350" cy="160" r="20" fill="#16A34A" />
+      <text x="350" y="165" textAnchor="middle" fontSize="16" fill="#FFFFFF" fontWeight="bold">₹</text>
+      <text x="350" y="195" textAnchor="middle" fontSize="10">PAYOUT</text>
+
+
+      {/* TDS Forms representation */}
+      <g transform="translate(50, 40)">
+          <rect width="80" height="50" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+          <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">24Q</text>
+          <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Salary</text>
+      </g>
+      <g transform="translate(350, 40)">
+          <rect width="80" height="50" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+          <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">26Q</text>
+          <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Non-Salary</text>
+      </g>
+       <g transform="translate(50, 230)">
+          <rect width="80" height="50" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+          <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">Form 16</text>
+          <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Certificate</text>
+      </g>
+      <g transform="translate(350, 230)">
+          <path d="M10 0 L 70 0 L 60 50 L 20 50 Z" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5"/>
+          <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">27Q</text>
+          <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Non-Resident</text>
+      </g>
+
+    </svg>
+  );
+}
+
 export default function TDSServices() {
   return (
     <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-primary-50 to-white py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="p-3 bg-primary-600 rounded-xl text-white">
-              <Receipt className="w-8 h-8" />
-            </div>
+           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <p className="text-sm font-medium text-primary-600 uppercase tracking-wide">Our Services</p>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">TDS Services</h1>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-primary-600 rounded-xl text-white">
+                    <Receipt className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-primary-600 uppercase tracking-wide">Our Services</p>
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900">TDS Services</h1>
+                  </div>
+                </div>
+                <p className="text-xl text-gray-600 max-w-3xl mt-4">
+                  Tax Deducted at Source is one of the most compliance-heavy areas for Indian businesses.
+                  Missed deadlines, incorrect deductions, or wrong PAN details attract heavy penalties.
+                  Byalance manages your complete TDS lifecycle — from deduction to quarterly filings and
+                  certificate generation.
+                </p>
+            </div>
+            <div className="hidden md:block">
+              <TdsIllustration />
             </div>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mt-4">
-            Tax Deducted at Source is one of the most compliance-heavy areas for Indian businesses.
-            Missed deadlines, incorrect deductions, or wrong PAN details attract heavy penalties.
-            Byalance manages your complete TDS lifecycle — from deduction to quarterly filings and
-            certificate generation.
-          </p>
         </div>
       </section>
 

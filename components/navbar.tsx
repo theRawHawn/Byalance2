@@ -74,7 +74,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/brandlogo-converted-from-png.svg"
+                src="/brandlogo.svg"
                 alt="Byalance"
                 width={432}
                 height={144}

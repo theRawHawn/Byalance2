@@ -1,3 +1,4 @@
+
 import { Users, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -24,26 +25,86 @@ const whoIsItFor = [
   "Businesses in Karnataka, Maharashtra, Tamil Nadu, and other PT states",
 ];
 
+function PayrollIllustration() {
+  return (
+    <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="Payroll Processing Illustration">
+      <rect width="480" height="320" rx="16" fill="#F3F4F6" />
+
+      {/* Central element: Payslip */}
+      <rect x="140" y="60" width="200" height="200" rx="12" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      <circle cx="240" cy="100" r="25" fill="#3B82F6"/>
+      <path d="M230 100 h 20 M240 90 v 20" stroke="#FFFFFF" strokeWidth="4"/>
+      <text x="240" y="140" textAnchor="middle" fontSize="12" fontWeight="bold">SALARY SLIP</text>
+
+      {/* Earnings and Deductions */}
+      <rect x="160" y="160" width="60" height="6" rx="2" fill="#16A34A"/>
+      <rect x="160" y="175" width="50" height="6" rx="2" fill="#16A34A"/>
+      <text x="150" y="150" fontSize="10" fill="#16A34A">Earnings</text>
+
+      <rect x="260" y="160" width="60" height="6" rx="2" fill="#EF4444"/>
+      <rect x="260" y="175" width="40" height="6" rx="2" fill="#EF4444"/>
+      <text x="320" y="150" fontSize="10" fill="#EF4444" textAnchor="end">Deductions</text>
+      
+      <line x1="150" y1="190" x2="330" y2="190" stroke="#D1D5DB" strokeWidth="1.5" />
+      <text x="240" y="210" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#111827">Net Pay: ₹XXX</text>
+
+
+      {/* Statutory Icons */}
+      <g transform="translate(40, 80)">
+        <rect width="80" height="50" rx="8" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+        <text x="40" y="30" textAnchor="middle" fontWeight="bold" fontSize="14" fill="#1E40AF">PF</text>
+        <text x="40" y="45" textAnchor="middle" fontSize="8" fill="#6B7280">Provident Fund</text>
+      </g>
+
+      <g transform="translate(360, 80)">
+        <rect width="80" height="50" rx="8" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+        <text x="40" y="30" textAnchor="middle" fontWeight="bold" fontSize="14" fill="#1E40AF">ESI</text>
+        <text x="40" y="45" textAnchor="middle" fontSize="8" fill="#6B7280">State Insurance</text>
+      </g>
+
+      <g transform="translate(40, 200)">
+        <rect width="80" height="50" rx="8" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+        <text x="40" y="30" textAnchor="middle" fontWeight="bold" fontSize="14" fill="#1E40AF">PT</text>
+        <text x="40" y="45" textAnchor="middle" fontSize="8" fill="#6B7280">Professional Tax</text>
+      </g>
+
+      <g transform="translate(360, 200)">
+        <rect width="80" height="50" rx="8" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+        <text x="40" y="30" textAnchor="middle" fontWeight="bold" fontSize="14" fill="#EF4444">TDS</text>
+        <text x="40" y="45" textAnchor="middle" fontSize="8" fill="#6B7280">Income Tax</text>
+      </g>
+
+    </svg>
+  );
+}
+
 export default function PayrollProcessing() {
   return (
     <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-primary-50 to-white py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="p-3 bg-primary-600 rounded-xl text-white">
-              <Users className="w-8 h-8" />
-            </div>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <p className="text-sm font-medium text-primary-600 uppercase tracking-wide">Our Services</p>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Payroll Processing</h1>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-primary-600 rounded-xl text-white">
+                    <Users className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-primary-600 uppercase tracking-wide">Our Services</p>
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Payroll Processing</h1>
+                  </div>
+                </div>
+                <p className="text-xl text-gray-600 max-w-3xl mt-4">
+                  Running payroll correctly means more than just transferring salaries. PF, ESI, PT, TDS
+                  on salaries, and Form 16 all need to be managed on strict monthly and quarterly deadlines.
+                  Byalance handles your complete payroll cycle so your employees are paid correctly and your
+                  business stays compliant.
+                </p>
+            </div>
+            <div className="hidden md:block">
+              <PayrollIllustration />
             </div>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mt-4">
-            Running payroll correctly means more than just transferring salaries. PF, ESI, PT, TDS
-            on salaries, and Form 16 all need to be managed on strict monthly and quarterly deadlines.
-            Byalance handles your complete payroll cycle so your employees are paid correctly and your
-            business stays compliant.
-          </p>
         </div>
       </section>
 

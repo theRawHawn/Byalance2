@@ -1,17 +1,18 @@
 
 "use client"
 
+import { Suspense, lazy } from 'react';
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
-import dynamic from 'next/dynamic';
-import ServicesOverview from "@/components/services-overview";
+import WhyChooseUs from "@/components/why-choose-us";
 
-const WhyChooseUs = dynamic(() => import("@/components/why-choose-us"));
-const AboutSection = dynamic(() => import("@/components/about-section"));
-const PricingSection = dynamic(() => import("@/components/pricing-section"));
-const ContactSection = dynamic(() => import("@/components/contact-section"));
+const AboutSection = lazy(() => import("@/components/about-section"));
+const ServicesOverview = lazy(() => import("@/components/services-overview"));
+const PricingSection = lazy(() => import("@/components/pricing-section"));
+const ContactSection = lazy(() => import("@/components/contact-section"));
+
 
 // SEO Tip: Add a descriptive title for your homepage.
 // This is the most important piece of text for SEO.
@@ -30,22 +31,23 @@ export default function Home() {
         <HeroSection />
         <WhyChooseUs />
       </section>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section id="about">
+          <AboutSection />
+        </section>
 
-      <section id="about">
-        <AboutSection />
-      </section>
+        <section id="services">
+          <ServicesOverview />
+        </section>
 
-      <section id="services">
-        <ServicesOverview />
-      </section>
+        <section id="pricing">
+          <PricingSection />
+        </section>
 
-      <section id="pricing">
-        <PricingSection />
-      </section>
-
-      <section id="contact">
-        <ContactSection />
-      </section>
+        <section id="contact">
+          <ContactSection />
+        </section>
+      </Suspense>
 
       <Footer />
       <WhatsAppFloat />
