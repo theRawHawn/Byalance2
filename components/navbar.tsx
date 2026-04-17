@@ -25,7 +25,7 @@ const services = [
   { titleKey: "ITR Services",             href: "/services/itr-services"            },
   { titleKey: "GST Services",             href: "/services/gst-services"            },
   { titleKey: "TDS Services",             href: "/services/tds-services"            },
-  { titleKey: "Payroll Processing",       href: "/services/payroll-processing"      },
+  { titleKey: "Payroll Services",       href: "/services/payroll-processing"      },
 ];
 
 export default function Navbar() {

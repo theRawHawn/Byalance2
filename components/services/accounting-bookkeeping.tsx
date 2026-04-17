@@ -28,16 +28,16 @@ function AccountingIllustration() {
     <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="Accounting & Bookkeeping Illustration">
       <rect width="480" height="320" rx="16" fill="#F3F4F6" />
 
-      {/* Balance Scale */}\
+      {/* Balance Scale */}
       <path d="M 100 240 Q 240 200 380 240" stroke="#4B5563" strokeWidth="4" fill="none" />
       <rect x="235" y="100" width="10" height="150" rx="5" fill="#4B5563" />
       
-      {/* Left Pan (Assets) */}\
+      {/* Left Pan (Assets) */}
       <g transform="translate(60, 130)">
         <path d="M 0 60 L 80 60 L 70 75 L 10 75 Z" fill="#FFFFFF" stroke="#9CA3AF" strokeWidth="2" />
         <line x1="40" y1="0" x2="40" y2="60" stroke="#9CA3AF" strokeWidth="2" />
         <circle cx="40" cy="0" r="5" fill="#3B82F6" />
-        {/* Assets Icons */}\
+        {/* Assets Icons */}
         <g transform="translate(20, 15) scale(0.8)">
             <rect width="40" height="30" rx="4" fill="#16A34A" />
             <text x="20" y="20" textAnchor="middle" fontSize="16" fill="#FFFFFF" fontWeight="bold">₹</text>
@@ -46,12 +46,12 @@ function AccountingIllustration() {
       <text x="100" y="235" textAnchor="middle" fontSize="12" fontWeight="medium">ASSETS</text>
 
 
-      {/* Right Pan (Liabilities) */}\
+      {/* Right Pan (Liabilities) */}
       <g transform="translate(340, 130)">
         <path d="M 0 60 L 80 60 L 70 75 L 10 75 Z" fill="#FFFFFF" stroke="#9CA3AF" strokeWidth="2" />
         <line x1="40" y1="0" x2="40" y2="60" stroke="#9CA3AF" strokeWidth="2" />
         <circle cx="40" cy="0" r="5" fill="#3B82F6" />
-        {/* Liabilities Icons */}\
+        {/* Liabilities Icons */}
         <g transform="translate(15, 12) scale(0.7)">
             <rect width="50" height="35" rx="4" fill="#EF4444" />
             <line x1="10" y1="10" x2="40" y2="10" stroke="#FFFFFF" strokeWidth="2" />
@@ -61,7 +61,7 @@ function AccountingIllustration() {
       </g>
       <text x="380" y="235" textAnchor="middle" fontSize="12" fontWeight="medium">LIABILITIES</text>
 
-      {/* Background elements */}\
+      {/* Background elements */}
       <circle cx="240" cy="80" r="30" fill="#10B981" fillOpacity="0.2"/>
       <path d="M 180 80 L 240 140 L 300 80" stroke="#3B82F6" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
 
@@ -73,7 +73,7 @@ function AccountingIllustration() {
 export default function AccountingBookkeeping() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero */}\
+      {/* Hero */}
       <section className="bg-gradient-to-br from-primary-50 to-white py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -84,7 +84,7 @@ export default function AccountingBookkeeping() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-primary-600 uppercase tracking-wide">Our Services</p>
-                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Accounting &amp; Bookkeeping</h1>
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Accounting & Bookkeeping</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 max-w-3xl mt-4">
@@ -101,7 +101,7 @@ export default function AccountingBookkeeping() {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-10">
-        {/* Main content */}\
+        {/* Main content */}
         <div className="lg:col-span-2 space-y-8">
           <Card>
             <CardContent className="p-8">
@@ -146,7 +146,7 @@ export default function AccountingBookkeeping() {
           </Card>
         </div>
 
-        {/* Sidebar CTA */}\
+        {/* Sidebar CTA */}
         <div className="space-y-6">
           <Card className="border-2 border-primary-600">
             <CardContent className="p-6">

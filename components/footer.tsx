@@ -30,7 +30,7 @@ export default function Footer() {
     'ITR Services',
     'GST Services',
     'TDS Returns',
-    'Payroll Processing',
+    'Payroll Services',
   ];
 
   return (
