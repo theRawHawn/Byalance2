@@ -1,92 +1,47 @@
 "use client";
+import React from 'react';
 
 import { Calculator, FileText, Receipt, Users, Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "@/lib/translation-context";
 import Link from "next/link";
 
-const services = [
-  {
-    icon: <Calculator className="w-12 h-12 text-primary-600" />,
-    title: "Accounting & Bookkeeping",
-    href: "/services/accounting-bookkeeping",
-    description: "Comprehensive accounting services to keep your books accurate and up-to-date.",
-    features: [
-      "Sales, Purchase, Expense Entries",
-      "Bank Reconciliation",
-      "Cash Book Maintenance",
-      "Journal Entries & Depreciation",
-      "Ledgers/Vendors Reconciliation",
-      "Trial Balance, P&L, Balance Sheet",
-      "Receivables & Payables Tracking",
-      "Data Setup & Cleanup",
-      "Month-End & Year-End Closing Support",
-    ],
-    wide: true,
-  },
-  {
-    icon: <FileText className="w-12 h-12 text-primary-600" />,
-    title: "ITR Services",
-    href: "/services/itr-services",
-    description: "Expert ITR filing services for individuals and businesses.",
-    features: [
-      "Applicability Check (Mandatory/Voluntary)",
-      "PAN-Aadhaar Linking Verification",
-      "Computation of Total Income & Tax",
-      "Form 26AS, AIS & TIS Review",
-      "Filing Correct ITR Form (ITR-1 to ITR-7)",
-      "Notice & Scrutiny Support",
-    ],
-    wide: false,
-  },
-  {
-    icon: <FileText className="w-12 h-12 text-primary-600" />,
-    title: "GST Services",
-    href: "/services/gst-services",
-    description: "Complete GST compliance and filing services to keep your business tax-compliant.",
-    features: [
-      "GST Registration",
-      "GSTR-1, 3B, 9 Filing",
-      "GST Input Credit Matching (2B vs Books)",
-      "E-Invoice & E-Way Bill Compliance",
-      "Late Fee and Penalty Resolution",
-    ],
-    wide: false,
-  },
-  {
-    icon: <Receipt className="w-12 h-12 text-primary-600" />,
-    title: "TDS Services",
-    href: "/services/tds-services",
-    description: "Comprehensive TDS management and filing services for your business.",
-    features: [
-      "TAN Application",
-      "Filing of Form 24Q, 26Q",
-      "Advance Tax & Challan Management",
-      "Form 16/16A Generation",
-      "TDS Default & Demand Resolution",
-    ],
-    wide: false,
-  },
-  {
-    icon: <Users className="w-12 h-12 text-primary-600" />,
-    title: "Payroll Services",
-    href: "/services/payroll-processing",
-    description: "Complete payroll management with accurate calculations and statutory compliance.",
-    features: [
-      "Employee Master Data Management",
-      "Salary Structuring & Monthly Calculations",
-      "Accurate Payslips & Payroll Register",
-      "Payroll Register & Salary Slips",
-      "TDS on Salary & Form 16/16A",
-      "PF/ESI/PT/EDLI Registration & Return Filing",
-      "Full & Final Settlement",
-    ],
-    wide: true,
-  },
-];
+const serviceIcons: { [key: string]: React.ReactElement } = {
+  accounting: <Calculator className="w-12 h-12 text-primary-600" />,
+  itr: <FileText className="w-12 h-12 text-primary-600" />,
+  gst: <FileText className="w-12 h-12 text-primary-600" />,
+  tds: <Receipt className="w-12 h-12 text-primary-600" />,
+  payroll: <Users className="w-12 h-12 text-primary-600" />,
+};
+
+const serviceLinks: { [key: string]: string } = {
+  accounting: "/services/accounting-bookkeeping",
+  itr: "/services/itr-services",
+  gst: "/services/gst-services",
+  tds: "/services/tds-services",
+  payroll: "/services/payroll-processing",
+};
+
+const serviceWideLayout: { [key: string]: boolean } = {
+  accounting: true,
+  itr: false,
+  gst: false,
+  tds: false,
+  payroll: true,
+};
 
 export default function ServicesOverview() {
   const { t } = useTranslation();
+
+  const services = Object.keys(t.services).map((key) => ({
+    key: key,
+    icon: serviceIcons[key],
+    title: t.services[key as keyof typeof t.services].title,
+    description: t.services[key as keyof typeof t.services].description,
+    features: t.services[key as keyof typeof t.services].features,
+    href: serviceLinks[key],
+    wide: serviceWideLayout[key],
+  }));
 
   return (
     <section className="py-20 bg-gray-50">
@@ -98,7 +53,7 @@ export default function ServicesOverview() {
 
         <div className="space-y-8">
           {services.map((service) => (
-            <Card key={service.title} className="hover:shadow-md transition-shadow">
+            <Card key={service.key} className="hover:shadow-md transition-shadow">
               <CardContent className="p-8">
                 <div className="flex items-start mb-6">
                   <div className="flex-shrink-0">{service.icon}</div>
