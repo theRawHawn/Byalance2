@@ -78,7 +78,7 @@ const services = [
       "Accurate Payslips & Payroll Register",
       "Payroll Register & Salary Slips",
       "TDS on Salary & Form 16/16A",
-      "PF/ESI/PT/EDLI Return Filing",
+      "PF/ESI/PT/EDLI Registration & Return Filing",
       "Full & Final Settlement",
     ],
     wide: true,

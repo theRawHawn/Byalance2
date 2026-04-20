@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTranslation } from '@/lib/translation-context';
 
 const WA_SVG = (size = 'w-6 h-6') => (
@@ -138,7 +139,12 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">{t.footer.rights}</p>
+           <div className="text-gray-400 text-sm">
+             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+             <span className="mx-2">|</span>
+             <Link href="/data-handling" className="hover:text-white">Data Handling Policy</Link>
+           </div>
+          <p className="text-gray-400 text-sm mt-4">{t.footer.rights}</p>
         </div>
       </div>
     </footer>
