@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon:  { url: "/favicon_logo.svg", sizes: "any" },
+    icon: { url: "/favicon_logo.svg", sizes: "any" },
     apple: { url: "/favicon_logo.svg", sizes: "180x180" },
   },
   robots: { index: true, follow: true },
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Providers>{children}</Providers>
         <Script
-          src="https.www.googletagmanager.com/gtag/js?id=G-LC2DSK5J0G"
+          src="https://www.googletagmanager.com/gtag/js?id=G-LC2DSK5J0G"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">

@@ -76,8 +76,8 @@ export default function Navbar() {
               <Image
                 src="/brandlogo.svg"
                 alt="Byalance"
-                width={432}
-                height={144}
+                width={384}
+                height={128}
                 priority
                 className="h-16 w-auto md:h-32"
               />
