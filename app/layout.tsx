@@ -77,9 +77,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={inter.className}>
         <Providers>{children}</Providers>
-        <SpeedInsights />
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-LC2DSK5J0G"
+          src="https.www.googletagmanager.com/gtag/js?id=G-LC2DSK5J0G"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -94,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <SpeedInsights />
       </body>
     </html>
   );
