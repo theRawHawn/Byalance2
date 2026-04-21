@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -76,8 +77,8 @@ export default function Navbar() {
               <Image
                 src="/brandlogo.svg"
                 alt="Byalance"
-                width={384}
-                height={128}
+                width={96}
+                height={32}
                 priority
                 className="h-16 w-auto md:h-32"
               />

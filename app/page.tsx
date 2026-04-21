@@ -4,14 +4,14 @@
 import { Suspense, lazy } from 'react';
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
-import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
-import WhyChooseUs from "@/components/why-choose-us";
 
+const WhyChooseUs = lazy(() => import("@/components/why-choose-us"));
 const AboutSection = lazy(() => import("@/components/about-section"));
 const ServicesOverview = lazy(() => import("@/components/services-overview"));
 const PricingSection = lazy(() => import("@/components/pricing-section"));
 const ContactSection = lazy(() => import("@/components/contact-section"));
+const Footer = lazy(() => import("@/components/footer"));
 
 
 // SEO Tip: Add a descriptive title for your homepage.
@@ -29,27 +29,40 @@ export default function Home() {
 
       <section id="home">
         <HeroSection />
-        <WhyChooseUs />
       </section>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <WhyChooseUs />
+      </Suspense>
+
       <Suspense fallback={<div>Loading...</div>}>
         <section id="about">
           <AboutSection />
         </section>
+      </Suspense>
 
+      <Suspense fallback={<div>Loading...</div>}>
         <section id="services">
           <ServicesOverview />
         </section>
+      </Suspense>
 
+      <Suspense fallback={<div>Loading...</div>}>
         <section id="pricing">
           <PricingSection />
         </section>
+      </Suspense>
 
+      <Suspense fallback={<div>Loading...</div>}>
         <section id="contact">
           <ContactSection />
         </section>
       </Suspense>
 
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Footer />
+      </Suspense>
+      
       <WhatsAppFloat />
     </div>
   );
