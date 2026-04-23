@@ -27,45 +27,25 @@ function AccountingIllustration() {
   return (
     <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="Accounting & Bookkeeping Illustration">
       <rect width="480" height="320" rx="16" fill="#F3F4F6" />
-
-      {/* Balance Scale */}
-      <path d="M 100 240 Q 240 200 380 240" stroke="#4B5563" strokeWidth="4" fill="none" />
-      <rect x="235" y="100" width="10" height="150" rx="5" fill="#4B5563" />
-      
-      {/* Left Pan (Assets) */}
-      <g transform="translate(60, 130)">
-        <path d="M 0 60 L 80 60 L 70 75 L 10 75 Z" fill="#FFFFFF" stroke="#9CA3AF" strokeWidth="2" />
-        <line x1="40" y1="0" x2="40" y2="60" stroke="#9CA3AF" strokeWidth="2" />
-        <circle cx="40" cy="0" r="5" fill="#3B82F6" />
-        {/* Assets Icons */}
-        <g transform="translate(20, 15) scale(0.8)">
-            <rect width="40" height="30" rx="4" fill="#16A34A" />
-            <text x="20" y="20" textAnchor="middle" fontSize="16" fill="#FFFFFF" fontWeight="bold">₹</text>
-        </g>
-      </g>
-      <text x="100" y="235" textAnchor="middle" fontSize="12" fontWeight="medium">ASSETS</text>
-
-
-      {/* Right Pan (Liabilities) */}
-      <g transform="translate(340, 130)">
-        <path d="M 0 60 L 80 60 L 70 75 L 10 75 Z" fill="#FFFFFF" stroke="#9CA3AF" strokeWidth="2" />
-        <line x1="40" y1="0" x2="40" y2="60" stroke="#9CA3AF" strokeWidth="2" />
-        <circle cx="40" cy="0" r="5" fill="#3B82F6" />
-        {/* Liabilities Icons */}
-        <g transform="translate(15, 12) scale(0.7)">
-            <rect width="50" height="35" rx="4" fill="#EF4444" />
-            <line x1="10" y1="10" x2="40" y2="10" stroke="#FFFFFF" strokeWidth="2" />
-            <line x1="10" y1="18" x2="40" y2="18" stroke="#FFFFFF" strokeWidth="2" />
-            <line x1="10" y1="26" x2="30" y2="26" stroke="#FFFFFF" strokeWidth="2" />
-        </g>
-      </g>
-      <text x="380" y="235" textAnchor="middle" fontSize="12" fontWeight="medium">LIABILITIES</text>
-
-      {/* Background elements */}
-      <circle cx="240" cy="80" r="30" fill="#10B981" fillOpacity="0.2"/>
-      <path d="M 180 80 L 240 140 L 300 80" stroke="#3B82F6" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
-
-      <text x="240" y="280" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#1E40AF">FINANCIAL BALANCE</text>
+      <rect x="100" y="60" width="280" height="200" rx="12" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      <path d="M240 60 V 260" stroke="#E5E7EB" strokeWidth="1.5" />
+      <text x="170" y="85" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111827">Debits</text>
+      <text x="310" y="85" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111827">Credits</text>
+      <rect x="120" y="100" width="100" height="8" rx="4" fill="#E5E7EB" />
+      <rect x="260" y="100" width="100" height="8" rx="4" fill="#E5E7EB" />
+      <rect x="120" y="120" width="80" height="8" rx="4" fill="#E5E7EB" />
+      <rect x="260" y="120" width="100" height="8" rx="4" fill="#E5E7EB" />
+      <rect x="120" y="140" width="100" height="8" rx="4" fill="#E5E7EB" />
+      <rect x="260" y="140" width="70" height="8" rx="4" fill="#E5E7EB" />
+      <line x1="110" y1="230" x2="370" y2="230" stroke="#D1D5DB" strokeWidth="2"/>
+      <rect x="160" y="240" width="40" height="10" rx="5" fill="#16A34A" />
+      <rect x="290" y="240" width="40" height="10" rx="5" fill="#16A34A" />
+      <circle cx="60" cy="100" r="30" fill="#3B82F6" />
+      <path d="M50 100 L 60 110 L 70 90" stroke="white" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="420" cy="220" r="30" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2" />
+      <path d="M410,225 a15,15 0 0,1 20,0" fill="none" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round"/>
+      <circle cx="416" cy="218" r="2" fill="#3B82F6"/>
+      <circle cx="424" cy="218" r="2" fill="#3B82F6"/>
     </svg>
   );
 }
