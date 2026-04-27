@@ -5,10 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { useTranslation } from "@/lib/translation-context";
 
-const starterFeatures = ["GST Returns", "Basic Bookkeeping", "Sales & Purchase Entries", "Monthly Financial Reports"];
-const growthFeatures  = ["GST Returns & Compliance", "TDS Returns & Filing", "Full Accounting & Bookkeeping", "Bank Reconciliation", "Financial Reports (P&L, Balance Sheet)"];
-const proFeatures     = ["GST & TDS Complete Management", "Payroll Processing", "Complete Accounting Services", "Advanced Financial Reports", "Priority Support"];
-
 export default function PricingSection() {
   const { t } = useTranslation();
 
@@ -35,7 +31,7 @@ export default function PricingSection() {
                 <p className="text-gray-600 text-sm">{t.pricing.perMonth}</p>
               </div>
               <ul className="space-y-4 mb-8">
-                {starterFeatures.map((f) => (
+                {t.pricing.starterFeatures.map((f) => (
                   <li key={f} className="flex items-center text-gray-700">
                     <Check className="text-green-500 mr-3 w-5 h-5 flex-shrink-0" />{f}
                   </li>
@@ -61,7 +57,7 @@ export default function PricingSection() {
                 <p className="text-gray-600 text-sm">{t.pricing.perMonth}</p>
               </div>
               <ul className="space-y-4 mb-8">
-                {growthFeatures.map((f) => (
+                {t.pricing.growthFeatures.map((f) => (
                   <li key={f} className="flex items-center text-gray-700">
                     <Check className="text-green-500 mr-3 w-5 h-5 flex-shrink-0" />{f}
                   </li>
@@ -82,7 +78,7 @@ export default function PricingSection() {
                 <p className="text-gray-600 text-sm">{t.pricing.perMonth}</p>
               </div>
               <ul className="space-y-4 mb-8">
-                {proFeatures.map((f) => (
+                {t.pricing.proFeatures.map((f) => (
                   <li key={f} className="flex items-center text-gray-700">
                     <Check className="text-green-500 mr-3 w-5 h-5 flex-shrink-0" />{f}
                   </li>

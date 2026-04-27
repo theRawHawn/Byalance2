@@ -86,7 +86,7 @@ export default function ContactSection() {
 
                   <FormField control={form.control} name="email" render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email *</FormLabel>
+                      <FormLabel>{t.contact.emailLabel}</FormLabel>
                       <FormControl><Input type="email" placeholder={t.contact.emailPlaceholder} {...field} /></FormControl>
                       <FormMessage />
                     </FormItem>
@@ -97,15 +97,12 @@ export default function ContactSection() {
                       <FormLabel>{t.contact.businessType}</FormLabel>
                       <Select onValueChange={field.onChange} value={field.value ?? ""}>
                         <FormControl>
-                          <SelectTrigger><SelectValue placeholder="Select your business type" /></SelectTrigger>
+                          <SelectTrigger><SelectValue placeholder={t.contact.businessTypePlaceholder} /></SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="retail">Retail Store</SelectItem>
-                          <SelectItem value="micro">Micro Business</SelectItem>
-                          <SelectItem value="small">Small Business</SelectItem>
-                          <SelectItem value="startup">Startup</SelectItem>
-                          <SelectItem value="msme">MSME</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          {Object.entries(t.contact.businessTypes).map(([key, value]) => (
+                            <SelectItem key={key} value={key}>{value}</SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -134,13 +131,13 @@ export default function ContactSection() {
           <div className="space-y-8">
             <Card>
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t.contact.contactInfo}</h3>
                 <div className="space-y-6">
                   {[
-                    { icon: <Phone className="w-6 h-6" />, label: t.contact.phone, lines: ["+91 74062 96116", "+91 96111 93492"] },
-                    { icon: <Mail  className="w-6 h-6" />, label: t.contact.email, lines: ["info@byalance.in", "support@byalance.in"] },
-                    { icon: <MapPin className="w-6 h-6" />, label: t.contact.address, lines: ["4th Phase, JP Nagar", "Bengaluru, Karnataka 560078"] },
-                    { icon: <Clock className="w-6 h-6" />, label: t.contact.hours,   lines: ["Mon – Sat: 9:00 AM – 6:00 PM", "Sunday: Closed"] },
+                    { icon: <Phone className="w-6 h-6" />, label: t.contact.phone, lines: t.footer.phone },
+                    { icon: <Mail  className="w-6 h-6" />, label: t.contact.email, lines: t.footer.email },
+                    { icon: <MapPin className="w-6 h-6" />, label: t.contact.address, lines: t.footer.address },
+                    { icon: <Clock className="w-6 h-6" />, label: t.contact.hours,   lines: t.contact.hoursValue },
                   ].map(({ icon, label, lines }) => (
                     <div key={label} className="flex items-start">
                       <div className="text-primary-600 mr-4 mt-1 flex-shrink-0">{icon}</div>

@@ -22,11 +22,11 @@ const WA_ICON = (
 );
 
 const services = [
-  { titleKey: "Accounting & Bookkeeping", href: "/services/accounting-bookkeeping" },
-  { titleKey: "ITR Services",             href: "/services/itr-services"            },
-  { titleKey: "GST Services",             href: "/services/gst-services"            },
-  { titleKey: "TDS Services",             href: "/services/tds-services"            },
-  { titleKey: "Payroll Services",       href: "/services/payroll-processing"      },
+    { titleKey: "accounting" as const, href: "/services/accounting-bookkeeping" },
+    { titleKey: "itr" as const, href: "/services/itr-services" },
+    { titleKey: "gst" as const, href: "/services/gst-services" },
+    { titleKey: "tds" as const, href: "/services/tds-services" },
+    { titleKey: "payroll" as const, href: "/services/payroll-processing" },
 ];
 
 export default function Navbar() {
@@ -60,7 +60,7 @@ export default function Navbar() {
         {services.map((service) => (
           <DropdownMenuItem key={service.href} asChild>
             <Link href={service.href} className="text-gray-700 hover:text-primary-600 block px-3 py-2 text-sm font-medium w-full">
-              {service.titleKey}
+              {t.services[service.titleKey].title}
             </Link>
           </DropdownMenuItem>
         ))}

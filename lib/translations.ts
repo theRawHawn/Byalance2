@@ -58,6 +58,9 @@ export interface Translations {
     perMonth: string;
     notIdeal: string;
     notIdealDesc: string;
+    starterFeatures: string[];
+    growthFeatures: string[];
+    proFeatures: string[];
   };
   contact: {
     sendMessage: string;
@@ -65,7 +68,7 @@ export interface Translations {
     email: string;
     address: string;
     hours: string;
-    hoursValue: string;
+    hoursValue: string[];
     preferWhatsApp: string;
     preferWhatsAppDesc: string;
     name: string;
@@ -76,6 +79,17 @@ export interface Translations {
     mobilePlaceholder: string;
     emailPlaceholder: string;
     messagePlaceholder: string;
+    contactInfo: string;
+    emailLabel: string;
+    businessTypes: {
+      retail: string;
+      micro: string;
+      small: string;
+      startup: string;
+      msme: string;
+      other: string;
+    }
+    businessTypePlaceholder: string;
   };
   footer: {
     quickLinks: string;
@@ -84,9 +98,9 @@ export interface Translations {
     rights: string;
     privacyPolicy: string;
     dataHandlingPolicy: string;
-    phone: string;
-    email: string;
-    address: string;
+    phone: string[];
+    email: string[];
+    address: string[];
     gstin: string;
   };
   services: {
@@ -198,6 +212,9 @@ export const translations: Record<Language, Translations> = {
       perMonth: 'per month',
       notIdeal: 'Not an Ideal Pricing?',
       notIdealDesc: 'Need a custom solution? Let\'s discuss your specific requirements.',
+      starterFeatures: ["GST Returns", "Basic Bookkeeping", "Sales & Purchase Entries", "Monthly Financial Reports"],
+      growthFeatures: ["GST Returns & Compliance", "TDS Returns & Filing", "Full Accounting & Bookkeeping", "Bank Reconciliation", "Financial Reports (P&L, Balance Sheet)"],
+      proFeatures: ["GST & TDS Complete Management", "Payroll Processing", "Complete Accounting Services", "Advanced Financial Reports", "Priority Support"]
     },
     contact: {
       sendMessage: 'Send us a message',
@@ -205,7 +222,7 @@ export const translations: Record<Language, Translations> = {
       email: 'Email',
       address: 'Address',
       hours: 'Business Hours',
-      hoursValue: 'Monday – Saturday: 9:00 AM – 6:00 PM\nSunday: Closed',
+      hoursValue: ['Monday – Saturday: 9:00 AM – 6:00 PM', 'Sunday: Closed'],
       preferWhatsApp: 'Prefer WhatsApp?',
       preferWhatsAppDesc: 'Get instant responses to your queries on WhatsApp.',
       name: 'Full Name',
@@ -216,6 +233,17 @@ export const translations: Record<Language, Translations> = {
       mobilePlaceholder: 'Enter your mobile number',
       emailPlaceholder: 'Enter your Email ID',
       messagePlaceholder: 'Tell us about your accounting needs...',
+      contactInfo: 'Contact Information',
+      emailLabel: 'Email *',
+      businessTypePlaceholder: 'Select your business type',
+      businessTypes: {
+        retail: 'Retail Store',
+        micro: 'Micro Business',
+        small: 'Small Business',
+        startup: 'Startup',
+        msme: 'MSME',
+        other: 'Other',
+      }
     },
     footer: {
       quickLinks: 'Quick Links',
@@ -224,9 +252,9 @@ export const translations: Record<Language, Translations> = {
       rights: '© 2026 Byalance. All rights reserved.',
       privacyPolicy: 'Privacy Policy',
       dataHandlingPolicy: 'Data Handling Policy',
-      phone: '+91 74062 96116<br />+91 96111 93492',
-      email: 'info@byalance.in',
-      address: '4th Phase, JP Nagar<br />Bengaluru, Karnataka 560078',
+      phone: ['+91 74062 96116', '+91 96111 93492'],
+      email: ['info@byalance.in'],
+      address: ['4th Phase, JP Nagar', 'Bengaluru, Karnataka 560078'],
       gstin: 'GSTIN: ',
     },
     services: {
@@ -374,6 +402,9 @@ export const translations: Record<Language, Translations> = {
       perMonth: 'प्रति माह',
       notIdeal: 'आदर्श मूल्य नहीं?',
       notIdealDesc: 'कस्टम समाधान चाहिए? आपकी विशिष्ट आवश्यकताओं पर चर्चा करते हैं।',
+      starterFeatures: ["जीएसटी रिटर्न", "बेसिक बहीखाता", "बिक्री और खरीद प्रविष्टियाँ", "मासिक वित्तीय रिपोर्ट"],
+      growthFeatures: ["जीएसटी रिटर्न और अनुपालन", "टीडीएस रिटर्न और फाइलिंग", "पूर्ण लेखा और बहीखाता", "बैंक समाधान", "वित्तीय रिपोर्ट (पी एंड एल, बैलेंस शीट)"],
+      proFeatures: ["जीएसटी और टीडीएस पूर्ण प्रबंधन", "पेरोल प्रसंस्करण", "पूर्ण लेखा सेवाएं", "उन्नत वित्तीय रिपोर्ट", "प्राथमिकता समर्थन"]
     },
     contact: {
       sendMessage: 'हमें संदेश भेजें',
@@ -381,7 +412,7 @@ export const translations: Record<Language, Translations> = {
       email: 'ईमेल',
       address: 'पता',
       hours: 'व्यावसायिक घंटे',
-      hoursValue: 'सोमवार – शनिवार: 9:00 AM – 6:00 PM\nरविवार: बंद',
+      hoursValue: ['सोमवार – शनिवार: सुबह 9:00 – शाम 6:00', 'रविवार: बंद'],
       preferWhatsApp: 'व्हाट्सऐप पसंद करते हैं?',
       preferWhatsAppDesc: 'व्हाट्सऐप पर अपने प्रश्नों का तुरंत उत्तर पाएं।',
       name: 'पूरा नाम',
@@ -392,6 +423,17 @@ export const translations: Record<Language, Translations> = {
       mobilePlaceholder: 'अपना मोबाइल नंबर दर्ज करें',
       emailPlaceholder: 'अपना ईमेल आईडी दर्ज करें',
       messagePlaceholder: 'अपनी लेखांकन जरूरतों के बारे में बताएं...',
+      contactInfo: 'संपर्क जानकारी',
+      emailLabel: 'ईमेल *',
+      businessTypePlaceholder: 'अपने व्यवसाय का प्रकार चुनें',
+      businessTypes: {
+        retail: 'खुदरा स्टोर',
+        micro: 'सूक्ष्म व्यवसाय',
+        small: 'छोटा व्यवसाय',
+        startup: 'स्टार्टअप',
+        msme: 'एमएसएमई',
+        other: 'अन्य',
+      }
     },
     footer: {
       quickLinks: 'त्वरित लिंक',
@@ -400,9 +442,9 @@ export const translations: Record<Language, Translations> = {
       rights: '© 2026 Byalance. सर्वाधिकार सुरक्षित।',
       privacyPolicy: 'गोपनीयता नीति',
       dataHandlingPolicy: 'डेटा हैंडलिंग नीति',
-      phone: '+91 74062 96116<br />+91 96111 93492',
-      email: 'info@byalance.in',
-      address: 'चौथा चरण, जेपी नगर<br />बेंगलुरु, कर्नाटक 560078',
+      phone: ['+91 74062 96116', '+91 96111 93492'],
+      email: ['info@byalance.in'],
+      address: ['चौथा चरण, जेपी नगर', 'बेंगलुरु, कर्नाटक 560078'],
       gstin: 'जीएसटीआईएन: ',
     },
     services: {
@@ -550,6 +592,9 @@ export const translations: Record<Language, Translations> = {
       perMonth: 'ಪ್ರತಿ ತಿಂಗಳು',
       notIdeal: 'ಆದರ್ಶ ಬೆಲೆ ಅಲ್ಲವೇ?',
       notIdealDesc: 'ಕಸ್ಟಮ್ ಪರಿಹಾರ ಬೇಕೇ? ನಿಮ್ಮ ನಿರ್ದಿಷ್ಟ ಅವಶ್ಯಕತೆಗಳ ಬಗ್ಗೆ ಚರ್ಚಿಸೋಣ.',
+      starterFeatures: ["ಜಿಎಸ್ಟಿ ರಿಟರ್ನ್ಸ್", "ಮೂಲ ಬುಕ್ಕೀಪಿಂಗ್", "ಮಾರಾಟ ಮತ್ತು ಖರೀದಿ ನಮೂದುಗಳು", "ಮಾಸಿಕ ಹಣಕಾಸು ವರದಿಗಳು"],
+      growthFeatures: ["ಜಿಎಸ್ಟಿ ರಿಟರ್ನ್ಸ್ ಮತ್ತು ಅನುಸರಣೆ", "ಟಿಡಿಎಸ್ ರಿಟರ್ನ್ಸ್ ಮತ್ತು ಫೈಲಿಂಗ್", "ಪೂರ್ಣ ಅಕೌಂಟಿಂಗ್ ಮತ್ತು ಬುಕ್ಕೀಪಿಂಗ್", "ಬ್ಯಾಂಕ್ ಸಾಮರಸ್ಯ", "ಹಣಕಾಸು ವರದಿಗಳು (ಪಿ & ಎಲ್, ಬ್ಯಾಲೆನ್ಸ್ ಶೀಟ್)"],
+      proFeatures: ["ಜಿಎಸ್ಟಿ ಮತ್ತು ಟಿಡಿಎಸ್ ಸಂಪೂರ್ಣ ನಿರ್ವಹಣೆ", "ವೇತನದಾರರ ಸಂಸ್ಕರಣೆ", "ಸಂಪೂರ್ಣ ಲೆಕ್ಕಪತ್ರ ಸೇವೆಗಳು", "ಸುಧಾರಿತ ಹಣಕಾಸು ವರದಿಗಳು", "ಆದ್ಯತೆಯ ಬೆಂಬಲ"]
     },
     contact: {
       sendMessage: 'ನಮಗೆ ಸಂದೇಶ ಕಳುಹಿಸಿ',
@@ -557,7 +602,7 @@ export const translations: Record<Language, Translations> = {
       email: 'ಇಮೇಲ್',
       address: 'ವಿಳಾಸ',
       hours: 'ವ್ಯಾಪಾರ ಸಮಯ',
-      hoursValue: 'ಸೋಮವಾರ – ಶನಿವಾರ: 9:00 AM – 6:00 PM\nಭಾನುವಾರ: ಮುಚ್ಚಿರುತ್ತದೆ',
+      hoursValue: ['ಸೋಮವಾರ – ಶನಿವಾರ: 9:00 AM – 6:00 PM', 'ಭಾನುವಾರ: ಮುಚ್ಚಿರುತ್ತದೆ'],
       preferWhatsApp: 'ವಾಟ್ಸ್‌ಆ್ಯಪ್ ಬಯಸುತ್ತೀರಾ?',
       preferWhatsAppDesc: 'ವಾಟ್ಸ್‌ಆ್ಯಪ್‌ನಲ್ಲಿ ತ್ವರಿತ ಉತ್ತರಗಳನ್ನು ಪಡೆಯಿರಿ.',
       name: 'ಪೂರ್ಣ ಹೆಸರು',
@@ -568,6 +613,17 @@ export const translations: Record<Language, Translations> = {
       mobilePlaceholder: 'ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ',
       emailPlaceholder: 'ನಿಮ್ಮ ಇಮೇಲ್ ಐಡಿ ನಮೂದಿಸಿ',
       messagePlaceholder: 'ನಿಮ್ಮ ಲೆಕ್ಕಪತ್ರ ಅವಶ್ಯಕತೆಗಳ ಬಗ್ಗೆ ತಿಳಿಸಿ...',
+      contactInfo: 'ಸಂಪರ್ಕ ಮಾಹಿತಿ',
+      emailLabel: 'ಇಮೇಲ್ *',
+      businessTypePlaceholder: 'ನಿಮ್ಮ ವ್ಯಾಪಾರದ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+      businessTypes: {
+        retail: 'ಚಿಲ್ಲರೆ ಅಂಗಡಿ',
+        micro: 'ಮೈಕ್ರೋ ಬಿಸಿನೆಸ್',
+        small: 'ಸಣ್ಣ ವ್ಯಾಪಾರ',
+        startup: 'ಸ್ಟಾರ್ಟ್ಅಪ್',
+        msme: 'ಎಂಎಸ್‌ಎಂಇ',
+        other: 'ಇತರೆ',
+      }
     },
     footer: {
       quickLinks: 'ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು',
@@ -576,9 +632,9 @@ export const translations: Record<Language, Translations> = {
       rights: '© 2026 Byalance. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.',
       privacyPolicy: 'ಗೌಪ್ಯತೆ ನೀತಿ',
       dataHandlingPolicy: 'ಡೇಟಾ ನಿರ್ವಹಣೆ ನೀತಿ',
-      phone: '+91 74062 96116<br />+91 96111 93492',
-      email: 'info@byalance.in',
-      address: '4ನೇ ಹಂತ, ಜೆಪಿ ನಗರ<br />ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ 560078',
+      phone: ['+91 74062 96116', '+91 96111 93492'],
+      email: ['info@byalance.in'],
+      address: ['4ನೇ ಹಂತ, ಜೆಪಿ ನಗರ', 'ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ 560078'],
       gstin: 'ಜಿಎಸ್ಟಿಐಎನ್: ',
     },
     services: {
@@ -726,6 +782,9 @@ export const translations: Record<Language, Translations> = {
       perMonth: 'प्रति महिना',
       notIdeal: 'आदर्श किंमत नाही?',
       notIdealDesc: 'सानुकूल उपाय हवा आहे? तुमच्या विशिष्ट गरजांबद्दल चर्चा करूया.',
+      starterFeatures: ["जीएसटी रिटर्न", "मूलभूत बुककीपिंग", "विक्री आणि खरेदी नोंदी", "मासिक आर्थिक अहवाल"],
+      growthFeatures: ["जीएसटी रिटर्न आणि अनुपालन", "टीडीएस रिटर्न आणि फाइलिंग", "पूर्ण लेखा आणि बुककीपिंग", " बँक सलोखा", "आर्थिक अहवाल (पी अँड एल, ताळेबंद)"],
+      proFeatures: ["जीएसटी आणि टीडीएस संपूर्ण व्यवस्थापन", "पेरोल प्रक्रिया", "पूर्ण लेखा सेवा", "प्रगत आर्थिक अहवाल", "प्राधान्य समर्थन"]
     },
     contact: {
       sendMessage: 'आम्हाला संदेश पाठवा',
@@ -733,7 +792,7 @@ export const translations: Record<Language, Translations> = {
       email: 'ईमेल',
       address: 'पत्ता',
       hours: 'व्यवसाय वेळ',
-      hoursValue: 'सोमवार – शनिवार: 9:00 AM – 6:00 PM\nरविवार: बंद',
+      hoursValue: ['सोमवार – शनिवार: सकाळी 9:00 – संध्याकाळी 6:00', 'रविवार: बंद'],
       preferWhatsApp: 'व्हाट्सअ‍ॅप पसंत आहे?',
       preferWhatsAppDesc: 'व्हाट्सअ‍ॅपवर तुमच्या प्रश्नांची त्वरित उत्तरे मिळवा.',
       name: 'पूर्ण नाव',
@@ -744,6 +803,17 @@ export const translations: Record<Language, Translations> = {
       mobilePlaceholder: 'तुमचा मोबाइल नंबर प्रविष्ट करा',
       emailPlaceholder: 'तुमचा ईमेल आयडी प्रविष्ट करा',
       messagePlaceholder: 'तुमच्या लेखाकाम गरजांबद्दल सांगा...',
+      contactInfo: 'संपर्क माहिती',
+      emailLabel: 'ईमेल *',
+      businessTypePlaceholder: 'तुमच्या व्यवसायाचा प्रकार निवडा',
+      businessTypes: {
+        retail: 'किरकोळ दुकान',
+        micro: 'सूक्ष्म व्यवसाय',
+        small: 'लहान व्यवसाय',
+        startup: 'स्टार्टअप',
+        msme: 'एमएसएमई',
+        other: 'इतर',
+      }
     },
     footer: {
       quickLinks: 'त्वरित दुवे',
@@ -752,9 +822,9 @@ export const translations: Record<Language, Translations> = {
       rights: '© 2026 Byalance. सर्व हक्क राखीव.',
       privacyPolicy: 'गोपनीयता धोरण',
       dataHandlingPolicy: 'डेटा हाताळणी धोरण',
-      phone: '+91 74062 96116<br />+91 96111 93492',
-      email: 'info@byalance.in',
-      address: 'चौथा टप्पा, जेपी नगर<br />बंगळूर, कर्नाटक 560078',
+      phone: ['+91 74062 96116', '+91 96111 93492'],
+      email: ['info@byalance.in'],
+      address: ['चौथा टप्पा, जेपी नगर', 'बंगळूर, कर्नाटक 560078'],
       gstin: 'जीएसटीआयएन: ',
     },
     services: {
@@ -902,6 +972,9 @@ export const translations: Record<Language, Translations> = {
       perMonth: 'నెలకు',
       notIdeal: 'ఆదర్శ ధర కాదా?',
       notIdealDesc: 'కస్టమ్ పరిష్కారం కావాలా? మీ నిర్దిష్ట అవసరాలను చర్చిద్దాం.',
+      starterFeatures: ["జీఎస్టీ రిటర్న్స్", "ప్రాథమిక బుక్ కీపింగ్", "అమ్మకాలు & కొనుగోలు ఎంట్రీలు", "నెలవారీ ఆర్థిక నివేదికలు"],
+      growthFeatures: ["జీఎస్టీ రిటర్న్స్ & కంప్లయన్స్", "టీడీఎస్ రిటర్న్స్ & ఫైలింగ్", "పూర్తి అకౌంటింగ్ & బుక్ కీపింగ్", "బ్యాంక్ సయోధ్య", "ఆర్థిక నివేదికలు (పి&ఎల్, బ్యాలెన్స్ షీట్)"],
+      proFeatures: ["జీఎస్టీ & టీడీఎస్ పూర్తి నిర్వహణ", "పేరోల్ ప్రాసెసింగ్", "పూర్తి అకౌంటింగ్ సేవలు", "అధునాతన ఆర్థిక నివేదికలు", "ప్రాధాన్యత మద్దతు"]
     },
     contact: {
       sendMessage: 'మాకు సందేశం పంపండి',
@@ -909,7 +982,7 @@ export const translations: Record<Language, Translations> = {
       email: 'ఇమెయిల్',
       address: 'చిరునామా',
       hours: 'వ్యాపార వేళలు',
-      hoursValue: 'సోమవారం – శనివారం: 9:00 AM – 6:00 PM\nఆదివారం: మూసివేయబడింది',
+      hoursValue: ['సోమవారం – శనివారం: ఉదయం 9:00 – సాయంత్రం 6:00', 'ఆదివారం: మూసివేయబడింది'],
       preferWhatsApp: 'వాట్సాప్ ఇష్టపడతారా?',
       preferWhatsAppDesc: 'వాట్సాప్‌లో మీ ప్రశ్నలకు తక్షణ సమాధానాలు పొందండి.',
       name: 'పూర్తి పేరు',
@@ -920,6 +993,17 @@ export const translations: Record<Language, Translations> = {
       mobilePlaceholder: 'మీ మొబైల్ నంబర్ నమోదు చేయండి',
       emailPlaceholder: 'మీ ఇమెయిల్ ఐడీ నమోదు చేయండి',
       messagePlaceholder: 'మీ అకౌంటింగ్ అవసరాల గురించి చెప్పండి...',
+      contactInfo: 'సంప్రదింపు సమాచారం',
+      emailLabel: 'ఇమెయిల్ *',
+      businessTypePlaceholder: 'మీ వ్యాపార రకాన్ని ఎంచుకోండి',
+      businessTypes: {
+        retail: 'రిటైల్ స్టోర్',
+        micro: 'మైక్రో బిజినెస్',
+        small: 'చిన్న వ్యాపారం',
+        startup: 'స్టార్టప్',
+        msme: 'ఎంఎస్ఎంఇ',
+        other: 'ఇతర',
+      }
     },
     footer: {
       quickLinks: 'శీఘ్ర లింక్‌లు',
@@ -928,9 +1012,9 @@ export const translations: Record<Language, Translations> = {
       rights: '© 2026 Byalance. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.',
       privacyPolicy: 'గోప్యతా విధానం',
       dataHandlingPolicy: 'డేటా నిర్వహణ విధానం',
-      phone: '+91 74062 96116<br />+91 96111 93492',
-      email: 'info@byalance.in',
-      address: '4వ దశ, జెపి నగర్<br />బెంగళూరు, కర్ణాటక 560078',
+      phone: ['+91 74062 96116', '+91 96111 93492'],
+      email: ['info@byalance.in'],
+      address: ['4వ దశ, జెపి నగర్', 'బెంగళూరు, కర్ణాటక 560078'],
       gstin: 'జిఎస్టిఐఎన్: ',
     },
     services: {
@@ -1078,6 +1162,9 @@ export const translations: Record<Language, Translations> = {
       perMonth: 'மாதத்திற்கு',
       notIdeal: 'சரியான விலை இல்லையா?',
       notIdealDesc: 'தனிப்பயன் தீர்வு வேண்டுமா? உங்கள் குறிப்பிட்ட தேவைகளைப் பற்றி பேசலாம்.',
+      starterFeatures: ["ஜிஎஸ்டி ரிட்டர்ன்ஸ்", "அடிப்படை கணக்கு வைப்பு", "விற்பனை மற்றும் கொள்முதல் பதிவுகள்", "மாதாந்திர நிதி அறிக்கைகள்"],
+      growthFeatures: ["ஜிஎஸ்டி ரிட்டர்ன்ஸ் & இணக்கம்", "டிடிஎஸ் ரிட்டர்ன்ஸ் & தாக்கல்", "முழு கணக்கியல் & கணக்கு வைப்பு", "வங்கி சரிபார்ப்பு", "நிதி அறிக்கைகள் (பி&எல், இருப்புநிலை)"],
+      proFeatures: ["ஜிஎஸ்டி & டிடிஎஸ் முழுமையான மேலாண்மை", "ஊதிய செயலாக்கம்", "முழுமையான கணக்கியல் சேவைகள்", "மேம்பட்ட நிதி அறிக்கைகள்", "முன்னுரிமை ஆதரவு"]
     },
     contact: {
       sendMessage: 'எங்களுக்கு செய்தி அனுப்புங்கள்',
@@ -1085,7 +1172,7 @@ export const translations: Record<Language, Translations> = {
       email: 'மின்னஞ்சல்',
       address: 'முகவரி',
       hours: 'வணிக நேரம்',
-      hoursValue: 'திங்கள் – சனி: 9:00 AM – 6:00 PM\nஞாயிறு: மூடப்பட்டது',
+      hoursValue: ['திங்கள் – சனி: காலை 9:00 – மாலை 6:00', 'ஞாயிறு: மூடப்பட்டது'],
       preferWhatsApp: 'வாட்ஸ்அப் விரும்புகிறீர்களா?',
       preferWhatsAppDesc: 'வாட்ஸ்அப்பில் உங்கள் கேள்விகளுக்கு உடனடி பதில்கள் பெறுங்கள்.',
       name: 'முழு பெயர்',
@@ -1096,6 +1183,17 @@ export const translations: Record<Language, Translations> = {
       mobilePlaceholder: 'உங்கள் மொபைல் எண்ணை உள்ளிடுங்கள்',
       emailPlaceholder: 'உங்கள் மின்னஞ்சல் ஐடியை உள்ளிடுங்கள்',
       messagePlaceholder: 'உங்கள் கணக்கியல் தேவைகளைப் பற்றி சொல்லுங்கள்...',
+      contactInfo: 'தொடர்பு தகவல்',
+      emailLabel: 'மின்னஞ்சல் *',
+      businessTypePlaceholder: 'உங்கள் வணிக வகையைத் தேர்ந்தெடுக்கவும்',
+      businessTypes: {
+        retail: 'சில்லறை விற்பனையகம்',
+        micro: 'சிறு வணிகம்',
+        small: 'சிறு வணிகம்',
+        startup: 'தொடக்க',
+        msme: 'எம்எஸ்எம்இ',
+        other: 'மற்றவை',
+      }
     },
     footer: {
       quickLinks: 'விரைவு இணைப்புகள்',
@@ -1104,9 +1202,9 @@ export const translations: Record<Language, Translations> = {
       rights: '© 2026 Byalance. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
       privacyPolicy: 'தனியுரிமைக் கொள்கை',
       dataHandlingPolicy: 'தரவு கையாளுதல் கொள்கை',
-      phone: '+91 74062 96116<br />+91 96111 93492',
-      email: 'info@byalance.in',
-      address: '4வது கட்டம், ஜேபி நகர்<br />பெங்களூரு, கர்நாடகா 560078',
+      phone: ['+91 74062 96116', '+91 96111 93492'],
+      email: ['info@byalance.in'],
+      address: ['4வது கட்டம், ஜேபி நகர்', 'பெங்களூரு, கர்நாடகா 560078'],
       gstin: 'ஜிஎஸ்டிஐஎன்: ',
     },
     services: {
@@ -1156,7 +1254,7 @@ export const translations: Record<Language, Translations> = {
           "படிவம் 24Q, 26Q தாக்கல்",
           "முன்கூட்டிய வரி மற்றும் சலான் மேலாண்மை",
           "படிவம் 16/16A உருவாக்கம்",
-          "டிடிஎஸ் இயல்புநிலை மற்றும் கோரிக்கை தீர்வு",
+          "டிடிಎಸ್ இயல்புநிலை மற்றும் கோரிக்கை தீர்வு",
         ],
       },
       payroll: {
@@ -1168,7 +1266,7 @@ export const translations: Record<Language, Translations> = {
           "துல்லியமான சம்பள சீட்டுகள் மற்றும் சம்பள பதிவேடு",
           "சம்பள பதிவேடு மற்றும் சம்பள சீட்டுகள்",
           "சம்பளத்தில் டிடிஎஸ் மற்றும் படிவம் 16/16A",
-          "பிஎஃப்/இஎஸ்ஐ/பிடி/இடிஎல்ஐ பதிவு மற்றும் ரிட்டர்ன் தாக்கல்",
+          "பிஎஃப்/இఎస్ஐ/பிடி/இடிఎల్ஐ பதிவு மற்றும் ரிட்டர்ன் தாக்கல்",
           "முழு மற்றும் இறுதி தீர்வு",
         ],
       },
