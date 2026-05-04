@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Image src="/brandlogowhite.svg"
-              alt="Byalance" width={240} height={80} loading="lazy" className="h-28 w-auto md:h-32 mb-1 ml-[-2px]"/>
+              alt="Byalance" width={240} height={80} loading="lazy" className="h-14 w-auto md:h-18 mb-1 ml-[-2px]"/>
             <div className="flex space-x-4">
               <a
                 href="https://wa.me/917406296116"
