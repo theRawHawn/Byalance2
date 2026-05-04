@@ -80,7 +80,7 @@ export default function Navbar() {
                 width={96}
                 height={32}
                 priority
-                className="h-16 w-auto md:h-32"
+                className="h-8 w-auto md:h-16"
               />
             </Link>
           </div>
