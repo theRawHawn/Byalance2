@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+    background-image: linear-gradient(180deg, #EDEEE6 0%, #E7E8DD 100%);
+  }
+  ::selection {
+    background: #A83C2E;
+    color: #EDEEE6;
+  }
+}
+
+@layer utilities {
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  .rule-dotted {
+    background-image: linear-gradient(to right, #131C2E 40%, transparent 0%);
+    background-position: bottom;
+    background-size: 8px 1.5px;
+    background-repeat: repeat-x;
+  }
+
+  .perforation {
+    background-image: radial-gradient(circle, #EDEEE6 2px, transparent 2.5px);
+    background-size: 14px 14px;
+    background-position: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
