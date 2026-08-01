@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import CapabilityStrip from './components/CapabilityStrip';
 import Services from './components/Services';
 import ImportFlow from './components/ImportFlow';
 import WhyByalance from './components/WhyByalance';
@@ -12,6 +13,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <CapabilityStrip />
         <Services />
         <ImportFlow />
         <WhyByalance />

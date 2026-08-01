@@ -12,6 +12,7 @@ export default function ImportFlow() {
   return (
     <section id="imports" className="relative py-24 md:py-32 bg-indigoDeep text-white overflow-hidden">
       <div className="absolute inset-0 opacity-40" style={{ background: 'radial-gradient(50% 40% at 90% 0%, rgba(53,71,232,0.35) 0%, rgba(53,71,232,0) 100%)' }} />
+      <div className="absolute inset-0 dot-grid-light fade-edges opacity-60 pointer-events-none" />
       <div className="relative max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-16 items-start mb-20">
           <div>

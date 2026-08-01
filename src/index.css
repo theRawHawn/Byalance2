@@ -16,6 +16,17 @@
 }
 
 @layer utilities {
+  .dot-grid {
+    background-image: radial-gradient(rgba(11,18,32,0.09) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .dot-grid-light {
+    background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .fade-edges {
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%);
+  }
   .mesh {
     background:
       radial-gradient(60% 50% at 15% 10%, rgba(53,71,232,0.10) 0%, rgba(53,71,232,0) 100%),
