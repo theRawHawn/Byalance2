@@ -7,36 +7,28 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-paper text-ink font-body antialiased;
-    background-image: linear-gradient(180deg, #EDEEE6 0%, #E7E8DD 100%);
+    @apply bg-base text-ink font-body antialiased;
   }
   ::selection {
-    background: #A83C2E;
-    color: #EDEEE6;
+    background: #3547E8;
+    color: #FFFFFF;
   }
 }
 
 @layer utilities {
-  .grain::before {
+  .mesh {
+    background:
+      radial-gradient(60% 50% at 15% 10%, rgba(53,71,232,0.10) 0%, rgba(53,71,232,0) 100%),
+      radial-gradient(50% 40% at 85% 0%, rgba(15,157,99,0.08) 0%, rgba(15,157,99,0) 100%);
+  }
+  .noise::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.025;
     pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     mix-blend-mode: multiply;
-  }
-
-  .rule-dotted {
-    background-image: linear-gradient(to right, #131C2E 40%, transparent 0%);
-    background-position: bottom;
-    background-size: 8px 1.5px;
-    background-repeat: repeat-x;
-  }
-
-  .perforation {
-    background-image: radial-gradient(circle, #EDEEE6 2px, transparent 2.5px);
-    background-size: 14px 14px;
-    background-position: center;
   }
 }
 

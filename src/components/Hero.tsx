@@ -1,104 +1,86 @@
 import { motion } from 'framer-motion';
-import Stamp from './doodles/Stamp';
+import StatusPanel from './mockups/StatusPanel';
 
-const chips = ['GSTR-1', 'GSTR-3B', 'TDS 26Q', 'PF · ECR', 'Bill of Entry', 'ICEGATE'];
+const logos = ['GST', 'TDS', 'EPFO', 'ICEGATE', 'RBI'];
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-40 pb-28 md:pt-48 md:pb-36">
-      <div className="absolute inset-0 grain pointer-events-none" />
+    <section id="top" className="relative overflow-hidden pt-40 pb-24 md:pt-48 md:pb-28 mesh">
+      <div className="absolute inset-0 noise pointer-events-none" />
 
-      {/* faint dotted route arcing across the hero */}
-      <svg
-        className="absolute top-24 left-0 w-full h-[420px] text-ink/10 pointer-events-none hidden md:block"
-        viewBox="0 0 1200 420"
-        fill="none"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M-20 340 C 220 200, 420 380, 620 220 C 780 90, 980 160, 1220 60"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeDasharray="1 10"
-        />
-      </svg>
-
-      <motion.div
-        initial={{ opacity: 0, rotate: -18, scale: 0.85 }}
-        animate={{ opacity: 1, rotate: -12, scale: 1 }}
-        transition={{ duration: 0.9, delay: 0.5, ease: 'easeOut' }}
-        className="absolute right-6 top-[168px] md:right-16 md:top-[130px] hidden sm:block"
-      >
-        <Stamp label="VERIFIED · BYALANCE" sub="filed" color="#A83C2E" size={116} />
-      </motion.div>
-
-      <div className="relative max-w-6xl mx-auto px-6 md:px-10">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="font-mono text-[11px] tracking-[0.3em] text-seal mb-6"
-        >
-          VIRTUAL ACCOUNTANT &amp; IMPORT DESK — BENGALURU
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-[42px] leading-[1.08] sm:text-[56px] md:text-[68px] md:leading-[1.05] text-ink max-w-4xl"
-        >
-          Your books, your compliance, and your imports —
-          <span className="italic text-navy"> run by one desk</span>, not five vendors.
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-7 max-w-xl text-[16.5px] leading-relaxed text-ink/70"
-        >
-          Byalance is built for startups, R&amp;D teams and institutions that don't have a finance
-          desk yet, or don't want the paperwork. We file the returns, run the payroll, and import
-          the hardware — under our own registrations where you don't have any.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-9 flex flex-wrap items-center gap-4"
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center rounded-full bg-navy text-paper px-6 py-3.5 text-[14px] font-medium hover:bg-ink transition-colors duration-300"
+      <div className="relative max-w-6xl mx-auto px-6 md:px-10 grid lg:grid-cols-[1.15fr,0.85fr] gap-16 items-center">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 mb-7"
           >
-            Talk to us this week
-          </a>
-          <a
-            href="#imports"
-            className="inline-flex items-center gap-2 rounded-full border border-ink/25 px-6 py-3.5 text-[14px] hover:border-ink/60 transition-colors duration-300"
-          >
-            See how import sourcing works
-          </a>
-        </motion.div>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald" />
+            <span className="text-[12px] font-medium text-inkSoft">Bengaluru · serving startups pan-India</span>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.55 }}
-          className="mt-16 flex flex-wrap gap-x-3 gap-y-2"
-        >
-          {chips.map((c) => (
-            <span
-              key={c}
-              className="font-mono text-[11px] tracking-wide text-ink/55 border border-ink/15 rounded px-2.5 py-1 bg-paper/60"
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-display font-semibold text-[42px] leading-[1.1] sm:text-[52px] md:text-[58px] md:leading-[1.08] text-ink tracking-tight"
+          >
+            Your books, compliance, and imports — run by{' '}
+            <span className="text-indigo">one desk</span>, not five vendors.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-6 max-w-lg text-[16.5px] leading-relaxed text-inkSoft"
+          >
+            Byalance is built for startups, R&amp;D teams and institutions that don't have a
+            finance desk yet. We file the returns, run payroll, and import the hardware — under
+            our own registrations where you don't have any.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-9 flex flex-wrap items-center gap-4"
+          >
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-lg bg-indigo text-white px-6 py-3.5 text-[14.5px] font-medium shadow-card hover:bg-indigoDeep transition-colors duration-300"
             >
-              {c}
-            </span>
-          ))}
-        </motion.div>
+              Talk to us this week
+            </a>
+            <a
+              href="#imports"
+              className="inline-flex items-center gap-1.5 text-[14.5px] font-medium text-ink hover:text-indigo transition-colors duration-300"
+            >
+              See how imports work
+              <span aria-hidden="true">→</span>
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
+            className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2"
+          >
+            <span className="text-[11px] uppercase tracking-wider text-inkSoft/70">We file &amp; clear under</span>
+            {logos.map((l) => (
+              <span key={l} className="font-mono text-[13px] font-medium text-ink/70">
+                {l}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="relative hidden lg:flex justify-center items-center h-[420px]">
+          <div className="absolute w-[380px] h-[380px] rounded-full bg-indigo/5 blur-3xl" />
+          <StatusPanel className="relative" />
+        </div>
       </div>
     </section>
   );
